@@ -1,26 +1,27 @@
-﻿
+﻿@model ContactUsForm
+
 <div class="row">
     <h1>Questions?</h1>
     <p class="lead">Send us a message</p>
 </div>
 <div class="row panel">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post" asp-controller="ContactUs" asp-action="Index">
         <div class="form-group">
             <label for="customerEmail" class="col-sm-2">Your email</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="customerEmail" placeholder="Email">
+                <input type="email" class="form-control" id="customerEmail" placeholder="Email" asp-for="CustomerEmail" required>
             </div>
         </div>
         <div class="form-group">
             <label for="customerName" class="col-sm-2">Your name</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="customerName" placeholder="Name">
+                <input type="text" class="form-control" id="customerName" placeholder="Name" asp-for="CustomerName" required>
             </div>
         </div>
         <div class="form-group">
             <label for="message" class="col-sm-2">Your message</label>
             <div class="col-sm-10">
-                <textarea id="message" rows="10" placeholder="Message" class="form-control"></textarea>
+                <textarea id="message" rows="10" placeholder="Message" class="form-control" asp-for="Message" required></textarea>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Send</button>

@@ -7,6 +7,9 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Autofac;
+using AzureStore.Services;
+using Autofac.Extensions.DependencyInjection;
 
 namespace AzureStore
 {
@@ -29,13 +32,23 @@ namespace AzureStore
 
         public IConfigurationRoot Configuration { get; set; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-
             services.AddMvc();
+
+            var container = CreateIoCContainer(services);
+            return container.Resolve<IServiceProvider>();
+        }
+
+        private IContainer CreateIoCContainer(IServiceCollection services)
+        {
+            services.AddTransient<IEmailSender, EmailSender>();
+
+            var containerBuilder = new ContainerBuilder();
+            containerBuilder.Populate(services);
+
+            return containerBuilder.Build();           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
