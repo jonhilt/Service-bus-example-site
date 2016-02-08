@@ -1,10 +1,12 @@
-﻿{
+{
   "version": "1.0.0-*",
   "compilationOptions": {
     "emitEntryPoint": true
   },
 
   "dependencies": {
+    "Autofac": "4.0.0-rc1-177",
+    "Autofac.Extensions.DependencyInjection": "4.0.0-rc1-177",
     "Microsoft.ApplicationInsights.AspNet": "1.0.0-rc1",
     "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
@@ -14,7 +16,7 @@
     "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
     "Microsoft.AspNet.Tooling.Razor": "1.0.0-rc1-final",
     "Microsoft.Extensions.Configuration": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Configuration.FileProviderExtensions" : "1.0.0-rc1-final",
+    "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1-final",
     "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
@@ -27,8 +29,7 @@
   },
 
   "frameworks": {
-    "dnx451": { },
-    "dnxcore50": { }
+    "dnx451": { }
   },
 
   "exclude": [
