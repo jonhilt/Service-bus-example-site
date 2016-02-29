@@ -43,7 +43,7 @@ namespace AzureStore
 
         private IContainer CreateIoCContainer(IServiceCollection services)
         {
-            services.AddTransient<IEmailSender, AzureServiceBusEmailSender>();
+            services.AddTransient<IContactUs, AzureContactUs>();
 
             var containerBuilder = new ContainerBuilder();
             containerBuilder.Populate(services);

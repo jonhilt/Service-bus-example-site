@@ -6,11 +6,11 @@ namespace AzureStore.Controllers
 {
     public class ContactUs : Controller
     {
-        private IEmailSender _emailSender;
+        private IContactUs _contactUs;
 
-        public ContactUs(IEmailSender emailSender)
+        public ContactUs(IContactUs contactUs)
         {
-            _emailSender = emailSender;
+            _contactUs = contactUs;
         }
 
         [HttpGet]
@@ -22,10 +22,8 @@ namespace AzureStore.Controllers
         [HttpPost]
         public IActionResult Index(ContactUsForm model)
         {
-            _emailSender.Send(model.CustomerEmail, model.CustomerName, model.Message);
+            _contactUs.SubmitDetails(model.CustomerEmail, model.CustomerName, model.Message);
             return RedirectToAction("Index");
         }
-    }
-
-  
+    }  
 }
