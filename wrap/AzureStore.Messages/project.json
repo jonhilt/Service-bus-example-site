@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "wrappedProject": "../../src/AzureStore.Messages/AzureStore.Messages.csproj",
+      "bin": {
+        "assembly": "../../src/AzureStore.Messages/obj/{configuration}/AzureStore.Messages.dll",
+        "pdb": "../../src/AzureStore.Messages/obj/{configuration}/AzureStore.Messages.pdb"
+      }
+    }
+  }
+}
