@@ -21,7 +21,8 @@ namespace AzureStore.Services
 
             var contactUsMessage = new ContactUsMessage(fromEmail, fromName, message);
             var serialized = JsonConvert.SerializeObject(contactUsMessage);
-            queue.AddMessage(new CloudQueueMessage(serialized));            
+            queue.AddMessage(new CloudQueueMessage(serialized));
+
         }
     }    
 

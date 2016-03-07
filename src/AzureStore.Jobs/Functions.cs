@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using AzureStore.Messages;
 
-namespace AzureStore.WebJobs
+namespace AzureStore.Jobs
 {
     public class Functions
     {
@@ -16,7 +16,7 @@ namespace AzureStore.WebJobs
         public static void ProcessQueueMessage([QueueTrigger("contact-us")] ContactUsMessage message, TextWriter log)
         {
             log.WriteLine(message);
-            EmailSender.Send(message.FromEmail, message.FromName, message.Message);           
+            EmailSender.Send(message.FromEmail, message.FromName, message.Message);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 
-namespace AzureStore.WebJobs
+namespace AzureStore.Jobs
 {
     class Program
     {
